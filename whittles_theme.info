@@ -1,0 +1,19 @@
+name = Whittles Responsive theme
+description = Starter theme designed for giving the developer more flexibility
+version = 1.2.7
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/theme.css
+stylesheets[print][] = css/print.css
+scripts[] = js/bootstrap.min.js
+
+regions[header]                 = Header
+regions[banner]                 = Banner
+regions[page_top]               = Page Top
+regions[page_right]             = page right
+regions[left]                   = Left sidebar
+regions[right]                  = Right sidebar
+regions[content]                = Content
+regions[content_bottom]         = Content bottom
+regions[footer]                 = Footer
