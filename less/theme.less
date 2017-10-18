@@ -147,6 +147,7 @@ ul.no-bullets{
 }
 img {
     max-width: 100%;
+    height: auto;
 }
 /** headings **/
 h1
@@ -288,7 +289,7 @@ blockquote
 /*bootstrap overides*/
 .navbar-default {
     background-color: @color-white;
-    border-color: @color-white;
+    border:none;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color:@color-white;
@@ -301,9 +302,16 @@ blockquote
 }
 /**/
 
-.header{
+.front .header{
     margin-bottom: 30px;
+}
 
+.header{
+    #logo{
+        &:hover{
+            opacity: 0.6;
+        }
+    }
     .search-box{
         padding-left:12px;
         label{
@@ -368,7 +376,8 @@ blockquote
                 font-size: 24px;
             }
         }
-        .navbar-nav{
+        .navbar-collapse{
+            padding: 25px 0 0 0;
             li{
                 font-family: @font-family-goudybookletter;
                 display: block;
@@ -376,10 +385,16 @@ blockquote
                 margin: 0 !important;
                 &.active{
                     background-color: #93a3ca;
-                    color: #fff;
+                    background-image: url(../images/menu-hover.png) !important;
                 }
                 a{
                     text-transform: uppercase;
+                    color: @color-purple;
+                    text-decoration:none;
+                    &.active,&:focus{
+                        background-color: transparent;
+                        color: @color-white;
+                    }
                 }
             }
         }
@@ -439,6 +454,9 @@ blockquote
 }
 
 /**************    page top     **************/
+.slideshow-wrap{
+    margin-bottom: 25px;
+}
 .slideshow{
     .carousel-inner,.item{
         padding: 0;
@@ -590,28 +608,44 @@ blockquote
 /**************  > > >  page top  **************/
 
 //page
-.front #content{
-    h1 {
-        color: #94a5d0;
-        font-family: GoudyBookletter,sans-serif,tahoma;
-        font-size: 1.467em;
-        font-weight: bold;
-        line-height: 22px;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-        margin-top: 0;
+.front {
+    #content{
+        h1 {
+            color: #94a5d0;
+            font-family: GoudyBookletter,sans-serif,tahoma;
+            font-size: 1.467em;
+            font-weight: bold;
+            line-height: 22px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        .content{
+            line-height: 17px;
+            font-size: 0.867em;
+            >p{
+                a{
+                    padding: 0 11px 0 0;
+                    background: url(../images/g-arrow.png) no-repeat scroll right center rgba(0,0,0,0);
+                }
+            }
+        }
+        .contact{
+            font-size:1em;
+            border-bottom: 1px solid #ebebeb;
+            border-top: 1px solid #ebebeb;
+            margin: 21px 0 0;
+            padding: 17px 8px 14px 19px;
+            width: 260px;
+        }
     }
-    .content{
-        line-height: 17px;
-        font-size: 0.867em;
-    }
-    .contact{
-        font-size:1em;
-        border-bottom: 1px solid #ebebeb;
-        border-top: 1px solid #ebebeb;
-        margin: 21px 0 0;
-        padding: 17px 8px 14px 19px;
-        width: 260px;
+}
+
+@media only screen and (max-width:991px){
+    .front {
+        #page{
+            margin-top: 20px;
+        }
     }
 }
 footer{
@@ -629,10 +663,6 @@ footer{
             padding: 0 10px 0 10px;
             float: left;
             background: url(../images/f-sep.png) no-repeat right 6px;
-
-            &.last{
-                background: none;
-            }
         }
     }
     .seconday-links-menu , .utilities-menu{
@@ -640,6 +670,15 @@ footer{
         ul{
             padding: 0;
             margin: 0;
+        }
+    }
+    .utilities-menu{
+        .menu{
+            li{
+                &.last{
+                    background: none;
+                } 
+            }       
         }
     }
     .footer-copyright{
@@ -670,6 +709,9 @@ footer{
             text-align: center;
             padding-top: 10px;
             border-top: 1px solid rgba(245, 245, 245, 0.19);
+        }
+        .seconday-links-menu , .utilities-menu{
+            float: none;
         }
     }
 }
@@ -724,6 +766,12 @@ footer{
         }
     }
 }
+
+@media only screen and (max-width:767px){
+    .newsletter {
+        margin-left: 0;
+    }
+}
 .company-news , .partners{
     h2{
         font-size: 1.467em;
@@ -739,6 +787,13 @@ footer{
         }
         .preview{
             width: 140px;
+            .img{
+                img{
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+            }
             .date,.name{
                 color: @color-white;
                 font-size: 0.667em;
@@ -818,3 +873,56 @@ footer{
         }
     }
 }
+
+
+//inner pages
+
+.title-bar{
+    background:@color-purple-dark;
+    padding: 15px 0;
+    .title{
+        font-family: @font-family-arial;
+        font-size: 1.200em;
+        line-height: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+    }
+    .breadcrumb {
+        text-align: right;
+        font-size:0.667em;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        background-color:transparent;
+        li{
+            color:#b7bdca;
+            padding: 0;
+            a{
+                color:inherit;
+                text-decoration: none;
+                &:hover{
+                    color:@color-purple-light;
+                }
+            }
+        }
+    }
+    //breadcrump for inner page
+    .breadcrumb li+li::before {
+        display: inline-block;
+        content: ">";
+        margin: 0 2px 0 0;
+        color:#b7bdca;
+
+    }
+}
+@media only screen and (max-width:767px){
+    .title-bar{
+        .breadcrumb{
+            padding-top: 10px !important;
+            margin-top: 10px;
+            border-top: 1px solid rgba(183, 189, 202, 0.13);
+        }
+    }
+} 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Displays a single Drupal page.
@@ -80,109 +79,172 @@
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
-<head>
-  <?php print $head; ?>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php print $head_title; ?></title>
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
-  <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?> </script>
-</head>
-<body class="<?php print $body_classes; ?>">
-  <div id="page" class="container test">
-    <div id="header">
-      <div id="logo-title">
+    <head>
+        <?php print $head; ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title><?php print $head_title; ?></title>
+            <?php print $styles; ?>
+            <?php print $scripts; ?>
+            <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
+    </head>
 
-        <?php if (!empty($logo)): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-          </a>
-        <?php endif; ?>
+    <body class="<?php print $body_classes; ?>">
+        <div class="header">
+            <div class="fluid  hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="desk-nav">
+                            <div class="col-sm-4 col-md-6">
+                                <div id="logo-title">
+                                    <?php if (!empty($logo)) { ?>
+                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+                                            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                                        </a>
+                                    <?php } ?>
+                                </div> <!-- /logo-title -->
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <?php if (!empty($header)) { ?>
+                                    <div id="header-region" class="header-blocks">
+                                        <?php print $header; ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <?php if (!empty($search_box)) { ?>
+                                    <div id="search-box" class="search-box"><?php print $search_box; ?></div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div id="name-and-slogan">
-          <?php if (!empty($site_name)): ?>
-            <div id="site-name">
-              <a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                <div class="main-navi">
+                    <div class="container">
+                        <div id="navigation" class="menu
+                        <?php
+                        if (!empty($primary_links)) {
+                            print "withprimary";
+                        } if (!empty($secondary_links)) {
+                            print " withsecondary";
+                        }
+                        ?>">
+                                 <?php if (!empty($primary_links)) { ?>
+                                <div id="primary" class="clear-block">
+                                    <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
+                                </div>
+                            <?php } ?>
+                        </div> <!-- /navigation -->
+                    </div>
+                </div>
+
             </div>
-          <?php endif; ?>
+            <div class="container">
+                <div class="row">
+                    <div class="mob-nav visible-xs">
+                        <nav class="navbar navbar-default">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <!-- header-logo -->
+                                <div id="logo" class="logo">
+                                    <?php if (!empty($logo)) { ?>
+                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo-link">
+                                            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                                        </a>
+                                    <?php } ?>
 
-          <?php if (!empty($site_slogan)): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /name-and-slogan -->
-      </div> <!-- /logo-title -->
+                                </div>
+                                <!-- /header-logo -->
 
-      <?php if (!empty($search_box)): ?>
-        <div id="search-box"><?php print $search_box; ?></div>
-      <?php endif; ?>
-
-      <?php if (!empty($header)): ?>
-        <div id="header-region">
-          <?php print $header; ?>
+                                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                </button>
+                                <div class="btn-list"><a href="mailto:<?php print $company_phone ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>  
+                            </div>
+                            <!-- Collection of nav links and other content for toggling -->
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav no-bullets')); ?>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-      <?php endif; ?>
 
-    </div> <!-- /header -->
+        <div id="page" class="fluid">
+            <div class="title-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <?php if (!empty($title)) { ?><h1 class="title" id="page-title"><?php print $title; ?></h1>
+                            <?php } ?></div>
+                        <div class="col-sm-4">
+                            <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="container" class="clear-block">
+                    <?php if (!empty($left)){ ?>
+                        <div id="sidebar-left" class="column sidebar download">
+                            <?php print $left; ?>
+                        </div> <!-- /sidebar-left -->
+                    <?php } ?>
 
-    <div id="container" class="clear-block">
+                    <div id="main" class="column">
+                        <div id="main-squeeze">
+                            <?php if (!empty($mission)){ ?><div id="mission"><?php print $mission; ?></div><?php } ?>
 
-      <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "withprimary"; } if (!empty($secondary_links)) { print " withsecondary"; } ?> ">
-        <?php if (!empty($primary_links)): ?>
-          <div id="primary" class="clear-block">
-            <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
-          </div>
-        <?php endif; ?>
+                            <div id="content">                             
+                                <?php if (!empty($tabs)){ ?><div class="tabs"><?php print $tabs; ?></div><?php } ?>
+                                <?php if (!empty($messages)){ print $messages;}?>
+                                <?php if (!empty($help)){ print $help; } ?>
+                                
+                                <div id="content-content" class="clear-block">
+                                    <?php print $content; ?>
+                                </div> <!-- /content-content -->
+                                <?php print $feed_icons; ?>
+                            </div> <!-- /content -->
 
-        <?php if (!empty($secondary_links)): ?>
-          <div id="secondary" class="clear-block">
-            <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
-          </div>
-        <?php endif; ?>
-      </div> <!-- /navigation -->
+                        </div>
 
-      <?php if (!empty($left)): ?>
-        <div id="sidebar-left" class="column sidebar">
-          <?php print $left; ?>
-        </div> <!-- /sidebar-left -->
-      <?php endif; ?>
+                        <?php if ($page_bottom) { ?>
+                            <div>
+                                <?php print $page_bottom; ?>
+                            </div>
+                        <?php } ?>
 
-      <div id="main" class="column"><div id="main-squeeze">
-        <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
-        <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
+                    </div> <!-- /main-squeeze /main -->
 
-        <div id="content">
-          <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-          <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
-          <?php if (!empty($messages)): print $messages; endif; ?>
-          <?php if (!empty($help)): print $help; endif; ?>
-          <div id="content-content" class="clear-block">
-            <?php print $content; ?>
-          </div> <!-- /content-content -->
-          <?php print $feed_icons; ?>
-        </div> <!-- /content -->
+                    <?php if (!empty($right)): ?>
+                        <div id="sidebar-right" class="column sidebar sidebar-right">
+                            <?php print $right; ?>
+                        </div> <!-- /sidebar-right -->
+                    <?php endif; ?>
 
-      </div></div> <!-- /main-squeeze /main -->
+                </div> <!-- /container -->
+            </div>
+        </div> <!-- /page -->
 
-      <?php if (!empty($right)): ?>
-        <div id="sidebar-right" class="column sidebar">
-          <?php print $right; ?>
-        </div> <!-- /sidebar-right -->
-      <?php endif; ?>
+        <footer class="footer">
+            <div class="container">
+                <div class="inner">
+                    <?php print $footer_message; ?>
+                    <?php
+                    if (!empty($footer)) {
+                        print $footer;
+                    }
+                    ?>
+                </div> <!-- /footer -->
+            </div>
+        </footer> <!-- /footer-wrapper -->
 
-    </div> <!-- /container -->
-
-    <div id="footer-wrapper">
-      <div id="footer">
-        <?php print $footer_message; ?>
-        <?php if (!empty($footer)): print $footer; endif; ?>
-      </div> <!-- /footer -->
-    </div> <!-- /footer-wrapper -->
-
-    <?php print $closure; ?>
-
-  </div> <!-- /page -->
-
-</body>
+        <?php print $closure; ?>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+    </body>
 </html>

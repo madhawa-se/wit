@@ -96,7 +96,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="desk-nav">
-                            <div class="col-sm-12 col-md-6">
+                            <div class="col-sm-4 col-md-6">
                                 <div id="logo-title">
                                     <?php if (!empty($logo)) { ?>
                                         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -105,14 +105,14 @@
                                     <?php } ?>
                                 </div> <!-- /logo-title -->
                             </div>
-                            <div class="col-sm-6 col-md-3">
+                            <div class="col-sm-4 col-md-3">
                                 <?php if (!empty($header)) { ?>
                                     <div id="header-region" class="header-blocks">
                                         <?php print $header; ?>
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="col-sm-6 col-md-3">
+                            <div class="col-sm-4 col-md-3">
                                 <?php if (!empty($search_box)) { ?>
                                     <div id="search-box" class="search-box"><?php print $search_box; ?></div>
                                 <?php } ?>
@@ -176,7 +176,7 @@
         </div>
         <div class="container page-top">
             <div class="row">
-                <div class="col-md-10 col-md-push-2">
+                <div class="col-md-10 col-md-push-2 slideshow-wrap">
                     <div class="slideshow">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <?php
