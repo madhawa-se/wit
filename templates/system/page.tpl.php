@@ -179,10 +179,10 @@
             <div class="title-bar">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-xs-12 col-sm-6">
                             <?php if (!empty($title)) { ?><h1 class="title" id="page-title"><?php print $title; ?></h1>
                             <?php } ?></div>
-                        <div class="col-sm-4">
+                        <div class="col-xs-12 col-sm-6">
                             <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
                         </div>
                     </div>
@@ -207,6 +207,11 @@
                                 
                                 <div id="content-content" class="clear-block">
                                     <?php print $content; ?>
+                                    <?php if($content_bottom){
+                                        print $content_bottom;
+                                    }
+                                    ?>
+
                                 </div> <!-- /content-content -->
                                 <?php print $feed_icons; ?>
                             </div> <!-- /content -->

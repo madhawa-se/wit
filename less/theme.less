@@ -113,6 +113,9 @@
 .hidden-text {
     display: none !important;
 }
+.remove-text {
+    text-indent: -9999px;
+}
 .text-decoration-none a {
     text-decoration: none;
 }
@@ -136,15 +139,17 @@
 div.no-bullets{
     ul{
         li{
-            background: none !important;
+            background-image: none !important;
         }
     }
 }
 ul.no-bullets{
     li{
-        background: none !important;
+        background-image: none !important;
     }
 }
+
+
 img {
     max-width: 100%;
     height: auto;
@@ -300,6 +305,44 @@ blockquote
 .navbar-toggle{
     margin:0 0 0 20px;
 }
+/**/
+
+/* global overides */
+.sidebar-right{
+    margin-top: 20px;
+}
+
+/* carosel overide - slide to fade animation */
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+
 /**/
 
 .front .header{
@@ -925,4 +968,245 @@ footer{
             border-top: 1px solid rgba(183, 189, 202, 0.13);
         }
     }
-} 
+}
+
+//servises page
+
+#landing-page-list {
+    padding: 20px 0 0 0;
+    margin: 0;
+    border-top: 1px solid @color-gray-light;
+    .view-content {
+        .odd ,.even{
+            margin-bottom: 20px;
+        }	
+    }
+    .node-title {
+        margin: 0;
+        font-weight: bold;
+        font-size: 0.933em;
+        background: @color-green;
+        padding: 6px 0 6px 20px;
+        font-family:@font-family-arial;
+        &:hover {
+            background: @color-purple-dark;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+            color: @color-white;
+        }
+    }
+    .node-teaser {
+        color: @base-color;
+        font-size: 0.867em;
+        padding: 17px 10px 16px 20px;
+        background: @color-gray-light;
+        line-height: 17px;
+    }
+}
+.page-services-business-guides {
+    #landing-page-list {
+        border-top: none;
+    }
+}
+
+//menu level 2+
+
+
+@color_1: #ffffff;
+@color_2: #676767;
+@color_3: #008472;
+
+.menu-plus {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            padding: 0;
+            background: none;
+            border-bottom: 1px solid #ebebeb;
+            a {
+                display: block;
+                color: @color_1;
+                font-size: 0.933em;
+                text-transform: uppercase;
+                line-height: 25px;
+                background: #95a5d0;
+                font-weight: bold;
+                text-decoration: none;
+                padding: 0 10px;
+                &:hover {
+                    background: #008472;
+                }
+            }
+            a.active-trail {
+                background: #008472;
+            }
+            ul {
+                li {
+                    ul {
+                        background: #ebebeb;
+                        margin: 5px 0 0 0;
+                        li {
+                            ul {
+                                margin: 0;
+                                li {
+                                    a {
+                                        background: url(../images/bullet-r.png) no-repeat 50px 10px #fff;
+                                        padding: 5px 0 5px 71px !important;
+                                        display: block;
+                                        &:hover {
+                                            background: url(../images/bullet-rh.png) no-repeat 50px 10px #ebebeb;
+                                        }
+                                        &.active-trail{
+                                            background: url(../images/bullet-rh.png) no-repeat 50px 10px #ebebeb;
+                                        }
+                                    }
+                                    &.last{
+                                        a {
+                                            padding: 5px 0 11px 71px;
+                                        } 
+                                    }
+                                }
+                            }
+                            background: none;
+                            border-bottom: none;
+                            padding: 0;
+                            a {
+                                color: @color_2;
+                                font-size: 0.800em;
+                                text-transform: none;
+                                line-height: 20px;
+                                background: url(../images/bullet-r.png) no-repeat 36px 10px #fff;
+                                display: block;
+                                width: 241px;
+                                font-weight: normal;
+                                text-decoration: none;
+                                padding: 5px 0 5px 58px;
+                                margin: 0;
+                                &:hover {
+                                    color: @color_3;
+                                    background: url(../images/bullet-rh.png) no-repeat 36px 10px #ebebeb;
+                                }
+                            }
+                            a.active-trail {
+                                color: @color_3;
+                                background: url(../images/bullet-rh.png) no-repeat 36px 10px #ebebeb;
+                            }
+                        }
+                        li.last {
+                            a {
+                                padding: 5px 0 11px 58px;
+                            }
+                        }
+                    }
+                    background: #ebebeb;
+                    border-bottom: 1px solid #d7d7d7;
+                    a {
+                        color: @color_2;
+                        font-size: 0.800em;
+                        text-transform: none;
+                        line-height: 20px;
+                        background: none;
+                        font-weight: normal;
+                        text-decoration: none;
+                        padding: 8px 10px 9px 13px;
+                        &:hover {
+                            color: @color_3;
+                            background: none;
+                        }
+                    }
+                    a.active-trail {
+                        color: @color_3;
+                        background: none;
+                    }
+                }
+                li.last {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+
+#company-news{
+    .card{
+        padding: 25px 0 25px;
+        border-bottom: 1px solid #EBEBEB;
+        text-transform: uppercase;
+
+        .content{
+            P{
+                margin-bottom:0 0 8px 0;
+            }
+            a{
+                font-size: 1.37em;
+                line-height: 26px;
+            }
+        }
+        .date{
+            color: #999;
+            font-size: 0.867em;
+        }
+        a{
+            color:@color-green;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+//global pagination
+ul.pager li {
+    &.first{
+        background: @color-green;
+        color:@color-white;
+    }
+    font-size: 0.846em;
+    padding: 0 6px !important;
+    font-weight: bold;
+    color:#666;
+    a{
+        border:none;
+        border-radius: 0;
+        padding: 4px 6px;
+        color:inherit;
+        line-height: 10px;
+        background: none;
+        .no-link;
+        &:hover{
+            text-decoration: none !important;
+            background: #bbb;
+            color: #000 !important;
+        }
+    }
+    &.pager-next a {
+        background: url(../images/next.gif) no-repeat 3px 5px !important;
+        &:hover,&:focus{
+            background: url(../images/next-hover.gif) no-repeat 0 0 !important;
+        }
+    }
+    &.pager-last a {
+        background: url(../images/last.gif) no-repeat 0 4px !important; 
+    }
+    &.pager-next a , &.pager-last a {
+        .remove-text;
+        width: 15px;
+    }
+
+}
+// contact us page
+
+.contact-details{
+    font-size: 0.8em;
+    h4{
+        margin: 0 0 17px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

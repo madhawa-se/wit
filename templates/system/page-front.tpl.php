@@ -178,7 +178,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-push-2 slideshow-wrap">
                     <div class="slideshow">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div id="myCarousel" class="carousel slide  carousel-fade" data-ride="carousel">
                             <?php
                             $view = views_get_view('Slideshow');
                             $preview = $view->render();

@@ -13,12 +13,18 @@
 }
 
 @base-color: #707070;
+
 @color-white:#fff;
 @color-black:#000;
+
 @color-purple-light:#93a3ca;
 @color-purple:#5a6d9d;
 @color-purple-dark:#362258;
 @color-purple-x:#3c2a5f;
+
+@color-gray-light:#ebebeb;
+
+@color-green:#008472;
 
 //== Typography
 //
@@ -30,7 +36,7 @@
 @font-size-h1:            floor((@font-size-base * 1.200)); // ~18px
 @font-size-h2:            floor((@font-size-base * 1.267)); // ~19px
 @font-size-h3:            ceil((@font-size-base * 1.3)); // ~19.5px
-@font-size-h4:            ceil((@font-size-base * 1.1)); // ~16px
+@font-size-h4:            ceil((@font-size-base * 0.867)); // ~13px
 @font-size-h5:            ceil((@font-size-base * 1.1)); // ~16px
 
 /** Global**/
@@ -82,19 +88,19 @@ a:active {
 
 
 .placeholder-color(@color){
-        &::-webkit-input-placeholder {
-            color: @color;
-        }
-        &:-moz-placeholder {
-            /* FF 4-18 */
-            color: @color;
-        }
-        &::-moz-placeholder {
-            /* FF 19+ */
-            color: @color;
-        }
-        &:-ms-input-placeholder {
-            /* IE 10+ */
-            color: @color;
-        }
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        /* FF 4-18 */
+        color: @color;
+    }
+    &::-moz-placeholder {
+        /* FF 19+ */
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: @color;
+    }
 }
