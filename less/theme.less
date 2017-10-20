@@ -312,7 +312,7 @@ blockquote
 /**/
 
 /* global overides */
-.sidebar-right{
+.sidebar.sidebar-right{
     margin-top: 20px;
 }
 /* carosel overide - slide to fade animation */
@@ -795,7 +795,7 @@ footer{
         margin-left: 0;
     }
 }
-.company-news , .partners{
+.company-news , .partners ,#staff-directory{
     h2{
         font-size: 1.467em;
         text-transform: uppercase;
@@ -826,6 +826,9 @@ footer{
                 &:hover{
                     background: @color-purple-x;
                 }
+                a{
+                    color: inherit;
+                }
             }
         }
         .data{
@@ -849,20 +852,14 @@ footer{
         }
     }
 }
-.company-news .card .data .link,.partners .card .preview .name{
+.company-news .card .data .link,.partners .card .preview .name ,#staff-directory .card .preview .name{
     a{
         padding: 0 11px 0 0;
     }
 }
-.company-news {
-    .card{
-        .data{
-            .link{
-                a{
-                    background: url("../images/g-arrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
-                }
-            }
-        }  
+.company-news .card .data .link,#staff-directory .card .preview .name{
+    a{
+        background: url("../images/g-arrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
     }
 }
 .partners{
