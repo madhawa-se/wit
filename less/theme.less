@@ -148,6 +148,15 @@ ul.no-bullets{
         background-image: none !important;
     }
 }
+.list-block{
+    margin: 0 !important;
+    padding: 0 !important;
+    li{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
 
 
 img {
@@ -220,12 +229,7 @@ ol li {
     padding: 0 0 0 2em;
 }
 
-ul ul, ul ol,
-ol ol, ol ul,
-.block ul ul, .block ul ol,
-.block ol ol, .block ol ul,
-.item-list ul ul, .item-list ul ol,
-.item-list ol ol, .item-list ol ul
+ul ul, ul ol,ol ol, ol ul,.block ul ul, .block ul ol,.block ol ol, .block ol ul,.item-list ul ul, .item-list ul ol,.item-list ol ol, .item-list ol ul
 {
     margin: 0;
 }
@@ -311,44 +315,28 @@ blockquote
 .sidebar-right{
     margin-top: 20px;
 }
-
 /* carosel overide - slide to fade animation */
-
 .carousel-fade {
     .carousel-inner {
         .item {
             transition-property: opacity;
         }
-        
-        .item,
-        .active.left,
-        .active.right {
+        .item,.active.left,.active.right {
             opacity: 0;
         }
-
-        .active,
-        .next.left,
-        .prev.right {
+        .active,.next.left,.prev.right {
             opacity: 1;
         }
-
-        .next,
-        .prev,
-        .active.left,
-        .active.right {
+        .next,.prev,.active.left,.active.right {
             left: 0;
             transform: translate3d(0, 0, 0);
         }
     }
 }
-
-
 /**/
-
 .front .header{
     margin-bottom: 30px;
 }
-
 .header{
     #logo{
         &:hover{
@@ -443,9 +431,7 @@ blockquote
         }
     }
 }
-
 .header .header-contact,#page .contact{
-
     line-height: 24px;
     font-size: 0.938em;
     color:@color-purple-light;
@@ -457,7 +443,6 @@ blockquote
         color: @color-purple;
     }
 }
-
 .main-navi{
     background-image: url(../images/menu.gif);
     background-position: 0 45px;
@@ -481,7 +466,6 @@ blockquote
         }
     }
 }
-
 @media only screen and (max-width:991px){
     .main-navi{
         .menu{
@@ -495,7 +479,6 @@ blockquote
         }
     }
 }
-
 /**************    page top     **************/
 .slideshow-wrap{
     margin-bottom: 25px;
@@ -527,7 +510,6 @@ blockquote
             padding: 0;
             margin: 0;
         }
-
     }  
     .img-view{
         img{
@@ -573,8 +555,6 @@ blockquote
             border-radius: 4px;
         }
     }
-
-
 }
 
 //left side blocks
@@ -1208,5 +1188,52 @@ ul.pager li {
         margin: 0 0 17px 0;
         font-weight: bold;
         text-transform: uppercase;
+    }
+}
+.map-view{
+    margin:0 20px;
+    display: inline-block;
+    div,strong{
+        display: inline-block;
+    }
+    strong{
+        width:100%;
+        text-align:center;
+    }
+}
+
+
+//profile page staff
+
+.profile{
+    .info{
+
+        margin: 0 20px 0 0 !important;
+        padding: 0;
+        li{
+            margin: 0;
+            padding: 25px 0;
+            list-style-type: none;
+            background: none;
+            font-size: 1.267em;
+            line-height: 23px;
+            color: #707070;
+            border-bottom: 1px solid #ebebeb;
+            span{
+                font-size: 1em;
+                color: #93a3ca;
+                line-height: 23px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            a{
+                font-size: 0.789em;
+                &:hover{
+                    text-decoration: none;
+                    color: #362258;
+                }
+            }
+
+        }
     }
 }

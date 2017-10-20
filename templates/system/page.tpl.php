@@ -188,9 +188,18 @@
                     </div>
                 </div>
             </div>
+            <?php if ($banner) { ?>
+                <div class="container">
+                    <div class="inner-slider">
+                        <div id="myCarousel" class="carousel slide  carousel-fade" data-ride="carousel">
+                            <?php print $banner ?>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
             <div class="container">
                 <div id="container" class="clear-block">
-                    <?php if (!empty($left)){ ?>
+                    <?php if (!empty($left)) { ?>
                         <div id="sidebar-left" class="column sidebar download">
                             <?php print $left; ?>
                         </div> <!-- /sidebar-left -->
@@ -198,16 +207,25 @@
 
                     <div id="main" class="column">
                         <div id="main-squeeze">
-                            <?php if (!empty($mission)){ ?><div id="mission"><?php print $mission; ?></div><?php } ?>
+                            <?php if (!empty($mission)) { ?><div id="mission"><?php print $mission; ?></div><?php } ?>
 
                             <div id="content">                             
-                                <?php if (!empty($tabs)){ ?><div class="tabs"><?php print $tabs; ?></div><?php } ?>
-                                <?php if (!empty($messages)){ print $messages;}?>
-                                <?php if (!empty($help)){ print $help; } ?>
-                                
+                                <?php if (!empty($tabs)) { ?><div class="tabs"><?php print $tabs; ?></div><?php } ?>
+                                <?php
+                                if (!empty($messages)) {
+                                    print $messages;
+                                }
+                                ?>
+                                <?php
+                                if (!empty($help)) {
+                                    print $help;
+                                }
+                                ?>
+
                                 <div id="content-content" class="clear-block">
                                     <?php print $content; ?>
-                                    <?php if($content_bottom){
+                                    <?php
+                                    if ($content_bottom) {
                                         print $content_bottom;
                                     }
                                     ?>
