@@ -176,7 +176,6 @@ h1
 
 h2
 {
-    font-family: @font-family-goudybookletter;
     line-height: 23px;
     color:#93a3ca;
     margin-top: 1.5em;
@@ -331,6 +330,11 @@ blockquote
             left: 0;
             transform: translate3d(0, 0, 0);
         }
+    }
+}
+.front{
+    h2{
+        font-family: @font-family-goudybookletter;
     }
 }
 /**/
@@ -629,7 +633,10 @@ blockquote
     }
 }
 /**************  > > >  page top  **************/
-
+#content{
+    overflow: hidden;
+    margin-top: 21px;
+}
 //page
 .front {
     #content{
@@ -1180,7 +1187,16 @@ ul.pager li {
 // contact us page
 
 .contact-details{
-    font-size: 0.8em;
+    a{
+        color: #707070;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    p{
+        font-size: 0.8em;
+    }
     h4{
         margin: 0 0 17px 0;
         font-weight: bold;
@@ -1198,7 +1214,11 @@ ul.pager li {
         text-align:center;
     }
 }
-
+@media screen and (max-width:991px){
+    .map-view{
+        margin:0;
+    }
+}
 
 //profile page staff
 
