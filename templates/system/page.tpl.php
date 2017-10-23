@@ -150,7 +150,7 @@
                                 <!-- header-logo -->
                                 <div id="logo" class="logo">
                                     <?php if (!empty($logo)) { ?>
-                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo-link">
+                                        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?> Home" rel="home" class="logo-link">
                                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                                         </a>
                                     <?php } ?>
@@ -162,8 +162,9 @@
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="fa fa-bars" aria-hidden="true"></i>
                                 </button>
+                                <div class="btn-list"><a href="/search/node"><i class="fa fa-search" aria-hidden="true"></i></a></div>
                                 <div class="btn-list"><a href="mailto:<?php print $company_phone ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
-                                <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">

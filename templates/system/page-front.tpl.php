@@ -99,7 +99,7 @@
                             <div class="col-sm-4 col-md-6">
                                 <div id="logo-title">
                                     <?php if (!empty($logo)) { ?>
-                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+                                        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?> Home" rel="home" id="logo">
                                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                                         </a>
                                     <?php } ?>

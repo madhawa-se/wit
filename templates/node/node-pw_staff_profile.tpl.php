@@ -28,6 +28,11 @@
 // We are still keep the old variables available ($image_exists $image_url, $thumbnail_url, $thumbnail_exists) for any sites that use them, but all sites
 // from this point forward should just use the $image_field variable and modify the cck field settings to determine the output.
 
+$linkedin = $node->field_linkedin[0]['view'];
+$pdf = $node->field_profile_pdf[0]['filepath'];
+$vcard = $node->field_vcard[0]['filepath'];
+
+
 if ($page) {
     if (!$status) {
         print '<div class="node-unpublished unpublished-staff">';
@@ -44,6 +49,15 @@ if ($page) {
                     <?php if ($email) { ?>
                         <li><span>Email </span><br><a href='mailto:<?php print $email ?>' class='email'><?php print $email ?></a></li>
                     <?php } ?>
+                    <?php if ($linkedin) { ?>
+                        <li class="linkedin"><span>linkedin </span><br><?php print $linkedin ?></li>
+                    <?php } ?>
+                    <?php if ($vcard) { ?>
+                        <li class="vcard"><span>v-card</span><br><a href='/<?php print $vcard ?>'>Download V-Card</a></li>
+                    <?php } ?>
+                    <?php if ($pdf) { ?>
+                        <li class="pdf"><span>pdf </span><br><a href='/<?php print $pdf ?>'>Download PDF</a></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-8">
@@ -54,7 +68,7 @@ if ($page) {
                 ?>
             </div>
         </div>
-        <div class="row">
+        <div class="row profile-details">
             <div class="col-xs-12 col-sm-4">
                 <?php
                 if ($image_field) {
