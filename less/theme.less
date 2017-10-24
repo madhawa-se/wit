@@ -271,6 +271,9 @@ blockquote{
 .navbar-toggle{
     margin:0 0 0 20px;
 }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border:none;
+}
 /* global overides */
 .block {
     margin-bottom: 1em;
@@ -317,6 +320,7 @@ blockquote{
             display: none;
         }
         .form-submit{
+            float:left;
             width: 30px;
             height: 31px;
             border:none;
@@ -330,7 +334,7 @@ blockquote{
         input[type="text"]{
             float: left;
             display: inline;
-            width: 155px; 
+            width: 170px;
             height: 31px;
             border: medium none;
             background: url(../images/search-bg.gif) no-repeat scroll left top rgba(0, 0, 0, 0);
@@ -384,7 +388,6 @@ blockquote{
                 font-family: @font-family-goudybookletter;
                 &.active{
                     background-color: #93a3ca;
-                    background-image: url(../images/menu-hover.png) !important;
                 }
                 a{
                     color: @color-purple;
@@ -409,6 +412,13 @@ blockquote{
     }
     a{
         color: @color-purple;
+    }
+}
+@media screen and (max-width:991px){
+    .header{    
+        .header-contact,.search-box{
+            margin-top: 15px;
+        }
     }
 }
 .main-navi{
@@ -472,7 +482,7 @@ blockquote{
         text-transform: uppercase;
         text-align:left;
         p{
-            width: 400px;
+            max-width: 400px;
             margin: 0;
             padding: 0;
         }
@@ -516,7 +526,6 @@ blockquote{
             width: 142px;
             margin: 0 auto !important;
             padding: 8px;
-            background: rgba(128,144,180,0.71);
             text-align: center;
             border-radius: 4px;
         }
@@ -588,12 +597,15 @@ blockquote{
     }
 }
 /**************  > > >  page top  **************/
-#content{
+.not-front #content{
     overflow: hidden;
     margin-top: 21px;
 }
 //page
 .front {
+    #page{
+        margin-top: 12px;
+    }
     #content{
         h1 {
             margin-top: 0;
@@ -703,7 +715,7 @@ footer{
 }
 //newsletter
 .newsletter {
-    margin: 0 0 20px 20px;
+    margin: 0 0 0 20px;
     padding: 13px 5px 35px 16px;
     background-color: #94A5D0;
     h2 {
@@ -794,7 +806,8 @@ footer{
             }
         }
         .data{
-            width: 130px;
+            float: right;
+            width: 46%;
             .content{
                 margin: -4px 0 0 0;
                 color: #898989;
@@ -854,6 +867,9 @@ footer{
     .company-news , .partners{
         .card{
             .data{
+                display: block;
+                float: none;
+                width:auto;
                 .content{
                     margin-top: 10px;
                 }
