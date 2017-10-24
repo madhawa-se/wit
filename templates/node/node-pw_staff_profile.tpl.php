@@ -31,7 +31,7 @@
 $linkedin = $node->field_linkedin[0]['view'];
 $pdf = $node->field_profile_pdf[0]['filepath'];
 $vcard = $node->field_vcard[0]['filepath'];
-
+$small_image = $node->field_vcard[0]['view'];
 
 if ($page) {
     if (!$status) {

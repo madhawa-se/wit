@@ -59,10 +59,6 @@
   <?php if ($submitted): ?>
     <span class="submitted"><?php print $submitted ?></span>
   <?php endif; ?>
-
-  <?php if ($terms): ?>
-    <div class="terms terms-inline"><?php print $terms ?></div>
-  <?php endif;?>
   </div>
 
   <div class="content">

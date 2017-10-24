@@ -162,12 +162,12 @@
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="fa fa-bars" aria-hidden="true"></i>
                                 </button>
-                                <div class="btn-list"><a href="/search/node"><i class="fa fa-search" aria-hidden="true"></i></a></div>
                                 <div class="btn-list"><a href="mailto:<?php print $company_phone ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
                                 <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">
+                                 <div class="btn-search"><a href="/search/node">search <i class="fa fa-search" aria-hidden="true"></i></a></div>
                                 <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav no-bullets')); ?>
                             </div>
                         </nav>
