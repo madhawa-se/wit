@@ -31,7 +31,7 @@
 $linkedin = $node->field_linkedin[0]['view'];
 $pdf = $node->field_profile_pdf[0]['filepath'];
 $vcard = $node->field_vcard[0]['filepath'];
-$small_image = $node->field_vcard[0]['view'];
+$small_image = $node->field_small_image[0]['view'];
 
 if ($page) {
     if (!$status) {
@@ -69,14 +69,12 @@ if ($page) {
             </div>
         </div>
         <div class="row profile-details">
-            <div class="col-xs-12 col-sm-4">
-                <?php
-                if ($image_field) {
-                    print $image_field;
-                }
-                ?>
-            </div>
-            <div class="col-xs-12 col-sm-8">
+            <?php if ($small_image) { ?>
+                <div class="col-xs-12 col-sm-4">
+                    <?php print $small_image; ?>
+                </div>
+            <?php } ?>
+            <div class="col-xs-12 <?php print ($small_image)? 'col-sm-8':'col-sm-12' ?>">
                 <h2 class="title"><?php print $title ?></h2>
                 <p class="intro"><?php print $body ?></p>
             </div>

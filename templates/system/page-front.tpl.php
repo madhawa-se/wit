@@ -245,15 +245,11 @@
                         <?php } ?>
                     </div>
                 </div>
-
-
-
                 <?php if (!empty($right)): ?>
                     <div id="sidebar-right" class="column sidebar">
                         <?php print $right; ?>
                     </div> <!-- /sidebar-right -->
                 <?php endif; ?>
-
             </div> <!-- /container -->
         </div>
         <footer class="footer">

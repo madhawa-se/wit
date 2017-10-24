@@ -306,6 +306,8 @@ blockquote{
 }
 #main{
     min-height: 450px;
+    padding-left: 15px;
+    padding-right: 15px; 
 }
 /**/
 .front .header{
@@ -614,9 +616,12 @@ blockquote{
     }
 }
 /**************  > > >  page top  **************/
-.not-front #content{
-    overflow: hidden;
-    margin-top: 21px;
+.not-front
+{
+    #content{
+        overflow: hidden;
+        margin-top: 21px;
+    }   
 }
 //page
 .front {
@@ -680,22 +685,19 @@ footer{
             background: url(../images/f-sep.png) no-repeat right 6px;
         }
     }
-    .seconday-links-menu , .utilities-menu{
+    .seconday-links-menu {
         float: left;
         ul{
             padding: 0;
             margin: 0;
-        }
-    }
-    .utilities-menu{
-        .menu{
             li{
                 &.last{
                     background: none;
-                } 
-            }       
+                }
+            }
         }
     }
+
     .footer-copyright{
         float: right;
         p{
@@ -725,9 +727,9 @@ footer{
             clear: both;
             text-align: center;
         }
-        .seconday-links-menu , .utilities-menu{
+        .seconday-links-menu{
             float: none;
-            overflow: hidden auto;
+            overflow:hidden;
         }
     }
 }
@@ -748,7 +750,7 @@ footer{
     legend{
         width: auto;
         border: none;
-        color: @badge-color;
+        color: @base-color;
         font-size: 0.938em;
     }
     #edit-actions{
@@ -955,6 +957,7 @@ footer{
             margin-top: 10px;
             padding-top: 10px !important;
             border-top: 1px solid rgba(183, 189, 202, 0.13);
+            text-align: left;
         }
     }
 }
@@ -1139,6 +1142,15 @@ footer{
         }
     }
 }
+@media screen and (max-width:767px){
+    .section-news{
+        #company-news{
+            .card{
+                text-align: center;
+            }
+        }
+    }
+}
 //global pagination
 ul.pager li {
     &.first{
@@ -1234,6 +1246,20 @@ ul.pager li {
                 background-color: @color-purple-x;
                 &:hover{
                     background-color: #94a5d0;
+                }
+            }
+        }
+    }
+}
+.page-our-people-other-staff{
+    #staff-directory{
+        .n1,.n2,.n6{
+            .preview{
+                .name{
+                    background-color: #94a5d0;
+                    &:hover{
+                        background-color: @color-purple-x;
+                    }
                 }
             }
         }
