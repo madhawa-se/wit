@@ -84,15 +84,15 @@
     <head>
         <?php print $head; ?>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <title><?php print $head_title; ?></title>
-            <?php print $styles; ?>
-            <?php print $scripts; ?>
-            <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
+        <title><?php print $head_title; ?></title>
+        <?php print $styles; ?>
+        <?php print $scripts; ?>
+        <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
     </head>
 
     <body class="<?php print $body_classes; ?>">
         <header class="header">
-            <div class="fluid  hidden-xs">
+            <div class="fluid hidden-xs">
                 <div class="container">
                     <div class="row">
                         <div class="desk-nav">
@@ -150,7 +150,7 @@
                                 <!-- header-logo -->
                                 <div id="logo" class="logo">
                                     <?php if (!empty($logo)) { ?>
-                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo-link">
+                                        <a href="<?php print $front_page; ?>" title="<?php print $site_name . " " . t('Home'); ?>" rel="home" class="logo-link">
                                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                                         </a>
                                     <?php } ?>
@@ -158,16 +158,18 @@
                                 </div>
                                 <!-- /header-logo -->
 
-                                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
                                     <span class="sr-only">Toggle navigation</span>
-                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
                                 </button>
-                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
-                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a href="/search/node"><i class="fa fa-search" aria-hidden="true"></i><span class="hidn-txt">Search</span></a></div>
+                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hidn-txt">Email</span></a></div>  
+                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"></i><span class="hidn-txt">Phone</span></a></div>  
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">
-                                <div class="btn-search"><a href="/search/node">search <i class="fa fa-search" aria-hidden="true"></i></a></div>
                                 <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav no-bullets')); ?>
                             </div>
                         </nav>
@@ -196,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-2 col-md-pull-10">
+                <div class="col-xs-12 col-md-2 col-md-pull-10 advice-section">
                     <?php
                     print $page_top;
                     ?>
@@ -231,6 +233,11 @@
                                     <div id="content-content" class="clear-block">
                                         <?php print $content; ?>
                                     </div> <!-- /content-content -->
+                                    <?php
+                                    if ($content_bottom) {
+                                        print $content_bottom;
+                                    }
+                                    ?>
                                     <?php print $feed_icons; ?>
                                 </div> <!-- /content -->
 

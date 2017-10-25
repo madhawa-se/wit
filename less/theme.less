@@ -99,7 +99,7 @@
 .text-a-c {
     text-align: center;
 }
-.hidden-text {
+.hidden-text,.hidn-txt{
     display: none !important;
 }
 .remove-text {
@@ -162,7 +162,7 @@ h2{
     margin-top: 1.5em;
     margin-bottom: 0.667em;
     color:@color-purple-light;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 23px;  
     text-transform:uppercase;
 }
@@ -257,6 +257,31 @@ blockquote{
     border-radius: 5px;
     cursor: pointer;
 }
+/*admin edit css overides*/
+ul.links.inline {
+    li {
+        display: inline-block;
+        padding: 0;
+        background: none;
+        list-style: none;
+        font-weight: normal !important;
+        font-size: initial;
+        text-transform: none;
+        a{
+            min-width: inherit;
+            padding: 0 !important;
+            background: none !important;
+            border: none !important;
+            &:after{
+                content: '' !important;
+            }
+            &:hover{
+                background: none;
+                color: inherit;
+            }
+        }
+    }
+}
 /*bootstrap overides*/
 .navbar-default {
     border:none;
@@ -273,6 +298,12 @@ blockquote{
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border:none;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: @color-purple-dark;
+}
+.navbar-toggle .icon-bar {
+    height: 3px;
 }
 /* global overides */
 .block {
@@ -305,9 +336,8 @@ blockquote{
     }
 }
 #main{
-    min-height: 450px;
-    padding-left: 15px;
-    padding-right: 15px; 
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
 }
 /**/
 .front .header{
@@ -333,7 +363,7 @@ blockquote{
             text-indent: -9999em;
             border-radius:0;
             &:hover{
-                background-position-y: -31px;
+                background-position:0 -31px;
             }
         }
         input[type="text"]{
@@ -350,11 +380,11 @@ blockquote{
             .placeholder-color(@color-purple);
             &:focus {
                 color: @color-purple-x;
-                font-style: normal;
+                font-style: 400;
             }
         }
     }
-    .header-contact,.search-box{
+    .contact-block,.search-box{
         margin-top: 30px;
     }
     .mob-nav{
@@ -369,19 +399,18 @@ blockquote{
             }
             .btn-list{
                 float: right;
+                padding-top: 12px;
                 a{
                     padding: 0 10px;
                     color:@color-purple-light;
                 }
             }
-            .navbar-toggle{
-                color:@color-purple-dark;
-            }
-            .btn-list,.navbar-toggle{
-                padding-top: 12px;
-            }
             .btn-list a,.navbar-toggle{
                 font-size: 24px;
+            }
+            .navbar-toggle{
+                margin-top: 12px;
+                padding: 0 15px 0 0;
             }
         }
         .navbar-collapse{
@@ -391,8 +420,11 @@ blockquote{
                 margin: 0 !important;
                 padding: 0 !important;
                 font-family: @font-family-goudybookletter;
-                &.active{
+                &.active,&:hover{
                     background-color: @color-purple-light;
+                    a{
+                        color:@color-white;
+                    }
                 }
                 a{
                     color: @color-purple;
@@ -405,22 +437,10 @@ blockquote{
                 }
             }
         }
-        //search button 
 
-        .btn-search{
-            color: @color-purple;
-            text-transform:uppercase;
-            a{
-                display: block;
-                padding: 6px 14px;
-                color:  @color-purple;
-                font-family: GoudyBookletter,sans-serif,tahoma;
-                text-decoration: none;
-            }
-        }
     }
 }
-.header .header-contact,#page .contact{
+.contact-block{
     color:@color-purple-light;
     font-size: 0.938em;
     line-height: 24px;
@@ -429,13 +449,41 @@ blockquote{
         font-size: 1.571em;
     }
     a{
+        background: none !important;
         color: @color-purple;
+    }
+    .content{
+        line-height: inherit;
     }
 }
 @media screen and (max-width:991px){
     .header{    
-        .header-contact,.search-box{
+        .contact-block,.search-box{
             margin-top: 15px;
+        }
+    }
+}
+@media screen and (max-width:767px){
+    .header{    
+        .logo{
+            padding-left: 15px;
+        }
+    }
+}
+@media screen and (max-width:574px){
+    .header{    
+        .mob-nav{
+            .navbar-header{
+                .btn-list{
+                    a{
+                        padding: 0 5px;
+                        font-size: 1.333em;
+                    }
+                }
+                .navbar-toggle{
+                    margin: 12px 0 0 5px;
+                }
+            }
         }
     }
 }
@@ -495,7 +543,7 @@ blockquote{
         color: @color-white;
         font-size: 1.467em;
         font-family: @font-family-goudybookletter;
-        font-weight: bold;
+        font-weight: 700;
         line-height: 22px;
         text-transform: uppercase;
         text-align:left;
@@ -552,67 +600,95 @@ blockquote{
 }
 
 //left side blocks
+.advice-section{
+    padding-right: 0;
+}
 .business-advice-block , .personel-advice-block{
-    .content {
-        .content {
-            a{
-                display: block;
-                width: 140px;
-                text-indent: -9999px;
-            }
-        }
+    position: relative;
+    padding: 20px 20px 0 20px;
+    text-transform: uppercase;
+    &:after{
+        content: "";
+        position: absolute;
+        display: inline-block;
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 34px;
+        background-size:40px;
+        background-repeat: no-repeat;
     }
-}
-.business-advice-block {
     .content {
         .content {
+            color:@color-white;
             p{
-                margin: 0;
-            }
-            a {
-                height: 195px;
-                background: url(../images/b-advice.jpg) no-repeat 0 0;
-                &:hover{
-                    background-position: 0 -195px; 
+                color: rgba(255, 255, 255, 0.75);
+                font-weight: 700;
+                a{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    span{
+                        visibility: hidden;
+                    }
                 }
+            }
+            h2{
+                margin-top:0;
+                color:inherit;
+                font-size: 1.133em;
+                font-family: @font-family-arial;
+                line-height: 18px;
+            }
+            span{
+                font-size: 0.667em;
             }
         }
     }
 }
-.personel-advice-block {
-    .content {
-        .content {
-            a {
-                height: 162px;
-                margin: 0;
-                background: url(../images/p-advice.jpg) no-repeat 0 0;
-                &:hover{
-                    background-position: 0 -162px; 
-                }
-            }
-        }
+.business-advice-block{
+    background-color: @color-green;
+    &:hover{
+        background-color: #004e41;
+    }
+    &:after{
+        background-image: url(../images/advice_b.png);
+    }
+}
+.personel-advice-block{
+    background-color: @color-purple-x;
+    &:hover{
+        background-color:#170539;
+    }
+    &:after{
+        background-image: url(../images/advice_p.png);
     }
 }
 @media only screen and (max-width:991px){
     .business-advice-block , .personel-advice-block{
-        float: left;
         display: inline-block;
-        width:50%;
+        width:47.5%;
+        min-height: 180px;
+        margin-right: 15px;
         text-align:center;
-        .content {
-            .content {
-                p{
-                    display: inline-block;
-                }
-            }
-        }
+    }
+    .business-advice-block {
+        float: left;
+    }
+    .personel-advice-block{
+        float: right;
     }
 }
-@media only screen and (max-width:574px){
+@media only screen and (max-width:767px){
     .business-advice-block , .personel-advice-block{
         float: none;
         display: block;
         width:auto;
+        min-height: 0;
+        text-align:center;
     }
 }
 /**************  > > >  page top  **************/
@@ -635,7 +711,7 @@ blockquote{
             color: #94a5d0;
             font-size: 1.467em;
             font-family: GoudyBookletter,sans-serif,tahoma;
-            font-weight: bold;
+            font-weight: 700;
             line-height: 22px;
             text-transform: uppercase;
 
@@ -650,8 +726,7 @@ blockquote{
                 }
             }
         }
-        .contact{
-            width: 260px;
+        .contact-block{
             margin: 21px 0 0;
             padding: 17px 8px 14px 19px;
             border-bottom: 1px solid @color-gray-light;
@@ -670,7 +745,7 @@ blockquote{
 }
 footer{
     margin-top: 24px;
-    padding: 15px 0;
+    padding: 15px 0 5px 0;
     background: url(../images/footer-bg.gif) repeat-x 0 0;
     background-color:@color-purple-light;
     color:@color-white;
@@ -678,7 +753,7 @@ footer{
     .menu{
         li{
             float: left;
-            display: inline;
+            display: inline-block;
             padding: 0 10px 0 10px;
             background: url(../images/f-sep.png) no-repeat right 6px;
         }
@@ -739,6 +814,8 @@ footer{
 }
 //newsletter
 .newsletter {
+    overflow: auto;
+    overflow-y: hidden;
     margin: 0 0 0 20px;
     padding: 13px 5px 15px 16px;
     background-color: #94A5D0;
@@ -914,6 +991,11 @@ footer{
         }
     }
 }
+@media only screen and (max-width:767px){
+    .company-news , .partners{
+        text-align: center;
+    }
+}
 //inner pages
 .title-bar{
     padding: 15px 0;
@@ -923,7 +1005,7 @@ footer{
         color: @color-white;
         font-size: 1.200em;
         font-family: @font-family-arial;
-        font-weight: bold;
+        font-weight: 700;
         line-height: 18px;
         text-transform: uppercase;
     }
@@ -981,7 +1063,7 @@ footer{
         background: @color-green;
         font-size: 0.933em;
         font-family:@font-family-arial;
-        font-weight: bold;
+        font-weight: 700;
         &:hover {
             background: @color-purple-dark;
         }
@@ -1020,7 +1102,7 @@ footer{
                 background: #95a5d0;
                 color: @color-white;
                 font-size: 0.933em;
-                font-weight: bold;
+                font-weight: 700;
                 line-height: 25px;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -1069,7 +1151,7 @@ footer{
                                 background: url(../images/bullet-r.png) no-repeat 36px 10px @color-white;
                                 color: #676767;
                                 font-size: 0.800em;
-                                font-weight: normal;
+                                font-weight: 400;
                                 line-height: 20px;
                                 text-transform: none;
                                 text-decoration: none;
@@ -1096,7 +1178,7 @@ footer{
                         background: none;
                         color: #676767;
                         font-size: 0.800em;
-                        font-weight: normal;
+                        font-weight: 400;
                         line-height: 20px;
                         text-transform: none;
                         text-decoration: none;
@@ -1125,7 +1207,7 @@ footer{
             text-transform: uppercase;
             .content{
                 P{
-                    margin-bottom:0 0 8px 0;
+                    margin:0 0 8px 0;
                 }
                 a{
                     font-size: 1.37em;
@@ -1164,7 +1246,7 @@ ul.pager li {
     padding: 0 6px !important;
     color:#666;
     font-size: 0.846em;
-    font-weight: bold;
+    font-weight: 700;
     a{
         padding: 4px 6px;
         border:none;
@@ -1207,7 +1289,7 @@ ul.pager li {
     }
     h4{
         margin: 0 0 17px 0;
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
     }
 }
@@ -1300,7 +1382,7 @@ ul.pager li {
                 color: @color-purple-light;
                 font-size: 1em;
                 line-height: 23px;
-                font-weight: bold;
+                font-weight: 700;
                 text-transform: uppercase;
             }
             a{
@@ -1333,7 +1415,7 @@ ul.pager li {
 }
 //search page
 .search-results dt {
-    font-weight: normal
+    font-weight: 400
 }
 // services expert
 .staff-expert{
@@ -1347,7 +1429,7 @@ ul.pager li {
         padding: 5px 0 5px 8px;
         background: #94A5D0;
         color: @color-white;
-        font-weight: bold;
+        font-weight: 700;
         text-transform: uppercase;
     }
     .card{

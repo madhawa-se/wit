@@ -84,10 +84,10 @@
     <head>
         <?php print $head; ?>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <title><?php print $head_title; ?></title>
-            <?php print $styles; ?>
-            <?php print $scripts; ?>
-            <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
+        <title><?php print $head_title; ?></title>
+        <?php print $styles; ?>
+        <?php print $scripts; ?>
+        <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
     </head>
 
     <body class="<?php print $body_classes; ?>">
@@ -99,7 +99,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-6">
                                 <div id="logo-title">
                                     <?php if (!empty($logo)) { ?>
-                                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+                                        <a href="<?php print $front_page; ?>" title="<?php print $site_name . " " . t('Home'); ?>" rel="home" id="logo">
                                             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                                         </a>
                                     <?php } ?>
@@ -158,16 +158,18 @@
                                 </div>
                                 <!-- /header-logo -->
 
-                                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
                                     <span class="sr-only">Toggle navigation</span>
-                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
                                 </button>
-                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
-                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"></i></a></div>
+                                <div class="btn-list"><a href="/search/node"><i class="fa fa-search" aria-hidden="true"></i><span class="hidn-txt">Search</span></a></div>
+                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"><span class="hidn-txt">Email</span></i></a></div>  
+                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"><span class="hidn-txt">Phone</span></i></a></div>
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">
-                                 <div class="btn-search"><a href="/search/node">search <i class="fa fa-search" aria-hidden="true"></i></a></div>
                                 <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav no-bullets')); ?>
                             </div>
                         </nav>
