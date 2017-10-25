@@ -83,7 +83,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
     <head>
         <?php print $head; ?>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title><?php print $head_title; ?></title>
             <?php print $styles; ?>
             <?php print $scripts; ?>
@@ -91,12 +91,12 @@
     </head>
 
     <body class="<?php print $body_classes; ?>">
-        <div class="header">
+        <header class="header">
             <div class="fluid  hidden-xs">
                 <div class="container">
                     <div class="row">
                         <div class="desk-nav">
-                            <div class="col-sm-4 col-md-6">
+                            <div class="col-xs-12 col-sm-4 col-md-6">
                                 <div id="logo-title">
                                     <?php if (!empty($logo)) { ?>
                                         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -105,14 +105,14 @@
                                     <?php } ?>
                                 </div> <!-- /logo-title -->
                             </div>
-                            <div class="col-sm-4 col-md-3">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
                                 <?php if (!empty($header)) { ?>
                                     <div id="header-region" class="header-blocks">
                                         <?php print $header; ?>
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="col-sm-4 col-md-3">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
                                 <?php if (!empty($search_box)) { ?>
                                     <div id="search-box" class="search-box"><?php print $search_box; ?></div>
                                 <?php } ?>
@@ -162,8 +162,8 @@
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="fa fa-bars" aria-hidden="true"></i>
                                 </button>
-                                <div class="btn-list"><a href="mailto:<?php print $company_phone ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
-                                <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>
+                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"></i></a></div>
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -174,7 +174,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
         <div id="page" class="fluid">
             <div class="title-bar">

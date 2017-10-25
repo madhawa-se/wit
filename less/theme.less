@@ -669,8 +669,6 @@ blockquote{
     }
 }
 footer{
-    float: left;
-    width: 100%;
     margin-top: 24px;
     padding: 15px 0;
     background: url(../images/footer-bg.gif) repeat-x 0 0;
@@ -720,6 +718,12 @@ footer{
 
 @media only screen and (max-width:991px){
     footer{
+        .menu{
+            text-align:center;
+            li{
+                float: none;
+            }
+        }
         .footer-copyright{
             float: none;
             padding-top: 10px;

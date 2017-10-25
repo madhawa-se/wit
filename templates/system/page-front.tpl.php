@@ -83,7 +83,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
     <head>
         <?php print $head; ?>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title><?php print $head_title; ?></title>
             <?php print $styles; ?>
             <?php print $scripts; ?>
@@ -91,7 +91,7 @@
     </head>
 
     <body class="<?php print $body_classes; ?>">
-        <div class="header">
+        <header class="header">
             <div class="fluid  hidden-xs">
                 <div class="container">
                     <div class="row">
@@ -162,8 +162,8 @@
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="fa fa-bars" aria-hidden="true"></i>
                                 </button>
-                                <div class="btn-list"><a href="mailto:<?php print $company_phone ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
-                                <div class="btn-list"><a><i class="fa fa-phone" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a href="mailto:<?php print $site_mail ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>  
+                                <div class="btn-list"><a href="tel:<?php print $company_phone ?>"><i class="fa fa-phone" aria-hidden="true"></i></a></div>  
                             </div>
                             <!-- Collection of nav links and other content for toggling -->
                             <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -174,10 +174,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
         <div class="container page-top">
             <div class="row">
-                <div class="col-md-10 col-md-push-2 slideshow-wrap">
+                <div class="col-xs-12 col-md-10 col-md-push-2 slideshow-wrap">
                     <div class="slideshow">
                         <div id="myCarousel" class="carousel slide  carousel-fade" data-ride="carousel">
                             <?php
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-md-pull-10">
+                <div class="col-xs-12 col-md-2 col-md-pull-10">
                     <?php
                     print $page_top;
                     ?>
@@ -212,7 +212,7 @@
                     </div> <!-- /sidebar-left -->
                 <?php endif; ?>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-xs-12 col-sm-4">
                         <div id="main" class="column"><div id="main-squeeze">
                                 <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
                                 <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
@@ -237,7 +237,7 @@
                             </div>
                         </div> <!-- /main-squeeze /main -->
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-xs-12 col-sm-8">
                         <?php if (!empty($page_right)) { ?>
                             <div class="page-right">
                                 <?php print $page_right; ?>

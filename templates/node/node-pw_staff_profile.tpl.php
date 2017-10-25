@@ -86,7 +86,7 @@ if ($page) {
     }
 } else {
     ?>
-    <div class="col-sm-4">
+    <div class="col-xs-4">
         <div class="card">
             <div class="preview">
                 <div class="img"><a class="no-link" href="<?php print $node_url ?>"><?php print $image_field; ?></a></div>
